@@ -33,8 +33,12 @@ struct SwiftPlayground {
         //creates variable = changes
         //var Hi = true
         //changes the value
-        //Hi = false
+        // string = 
         //boolean = true/false
-        //double = 
+        //integer = whole number, no decimals  (if in quotation marks, it's a string and it isn't able to calculate a string)
+        //Floating point numbers (double) = decimal (e.g. 1.0 0.5 1.001)
+        /*Calculating numbers =  var result = 8+3   print(result)  resul = result + 3   print(result)   print(result - result - result)
+        
+        % = even or not number*/
             }
 }
