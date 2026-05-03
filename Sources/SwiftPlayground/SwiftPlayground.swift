@@ -4,15 +4,32 @@
 @main
 struct SwiftPlayground {
     static func main() {
-        
+        print("Enter your score (between 0 and 100):")
+        let score = Int(readLine()!)!
+        if score == 100 {
+            print("You aced this!")
+        } else if score >= 80 && score < 100 {
+            print("Wow, I admire you!")
+        } else if score >= 50 {
+            print("Congratulations, you passed the test!")
+        } else if score >= 40 && score > 50 {
+            print("So close! Better luck next time.")
+        } else if score > 0 && score <= 10 {
+            print("How did you fail so bad?")
+        } else if score == 0 {
+            print("Please leave, I can't bear looking at such dissapointment.")
+        } else {
+            print("Sorry, but you failed.")
+        }
+
         //let a = 40
         //let b = 920
-        print("Write 1st number")
-        let a1 = readLine()!
-        print("Write 2nd number")
-        let a = Int(a1)!
-        let b1 = readLine()!
-        let b = Int(b1)!
+        //print("Write 1st number")
+        //let a1 = readLine()!
+        //print("Write 2nd number")
+        let a = 40 //Int(a1)!
+        //let b1 = readLine()!
+        let b = 920 //Int(b1)!
         print("1st and 2nd combined into 3rd:")
         let c = a + b
         print(c)
