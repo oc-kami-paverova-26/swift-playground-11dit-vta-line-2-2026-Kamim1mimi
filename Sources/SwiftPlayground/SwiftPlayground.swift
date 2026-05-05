@@ -7,12 +7,12 @@ struct SwiftPlayground {
         print("Enter your score (between 0 and 100):")
         let score = Int(readLine()!)!
         if score == 100 {
-            print("You aced this!")
+            print("You aced it!")
         } else if score >= 80 && score < 100 {
             print("Wow, I admire you!")
         } else if score >= 50 {
             print("Congratulations, you passed the test!")
-        } else if score >= 40 && score > 50 {
+        } else if score >= 40 && score < 50 {
             print("So close! Better luck next time.")
         } else if score > 0 && score <= 10 {
             print("How did you fail so bad?")
@@ -22,7 +22,7 @@ struct SwiftPlayground {
             print("Sorry, but you failed.")
         }
 
-        //let a = 40
+        /*//let a = 40
         //let b = 920
         //print("Write 1st number")
         //let a1 = readLine()!
@@ -47,7 +47,7 @@ struct SwiftPlayground {
         print(g)
         print("Are they all true?")
         let x = d && e && f && g
-        print(x)
+        print(x)*/
         
 
         /*print("What is your age in numbers")
