@@ -4,56 +4,34 @@
 @main
 struct SwiftPlayground {
     static func main() {
-        /*var count = 0
-        while count < 10 {
-            print("Beep, beep, \(count).")
-            count = count + 1*/
-
-        var isRunning = true
-        var ticket = 0
-        print("A = child, B = Adult, C = elderly, Q = quit.")
-        var input = readLine()!.lowercased()
-        while isRunning {switch input {
-            case "a":
-                ticket = ticket + 5
-                print("This will be \(ticket) dollars.")
-            case "b":
-                ticket = ticket + 8
-                print("This will be \(ticket) dollars.")
-            case "c":
-                ticket = ticket + 12
-                print("This will be \(ticket) dollars.")
-            case "q":
-                print("Your total is \(ticket) dollars.")
-                isRunning = false
-            default:
-                print("This key doesn't do anything.")
-                
-            var input = readLine()!.lowercased()
-        }
-        }
-
-        /*print("Buy tickets here. Write:")
-        print("C if you're below 12 years old. Price: 5 dollars.")
-        print("A if you're above 12 but below 18. Price: 8 dollars.")
-        print("O if you're above 18. Price: 12 dollars.")
-        print("Q when you're done.")*/
-
-        /*while isRunning == true {
-            var userInput = readLine()!.lowercased()
-            if userInput == "c" {
-                ticket = ticket + 5
-            } else if userInput == "a"
-                { ticket = ticket + 8
-            } else if userInput == "o"
-                { ticket = ticket + 12
-            } else if userInput == "q"
-                { isRunning = false
+        // Task - Only to accept people in if they are over the age of 18 
+        // creates a variable that keeps the loop on
+        var on = true
+        //creates a loop incase the user inputs invalid input
+        while on == true{
+        //asks the user for age
+        print("What is your age?")
+        //if the user inputs a number
+        if let input = readLine(), let age = Int(input) {
+            // doesn't accept invalid ages
+            if age <= 0 || age >= 122 {
+                print("Age incorrect.")
+            //doesn't accept ages 18 and below
+            } else if age <= 18 {
+                print("Too young.")
+                //stops the loop so they don't try to cheat the system
+                on = false
+            // if it's anything else (19 - 121), then they can enter
+            } else {
+                print("You may enter")
+                //so they don't have to repeatedly put in their answer
+                on = false
             }
-            print(ticket, "dollars.")
+        } else {
+            //if the user doesn't input a number. No "on = false" because they need to input another input
+            print("Please enter a number.")
+    }
         }
-        if isRunning == false {
-            print("Your total is \(ticket). Enjoy your movie.")}
-        */
+
         }
 }
