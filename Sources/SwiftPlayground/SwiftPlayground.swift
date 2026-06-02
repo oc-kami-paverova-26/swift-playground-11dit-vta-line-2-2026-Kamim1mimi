@@ -4,10 +4,68 @@
 @main
 struct SwiftPlayground {
     static func main() {
-        //the price of an item
+        let ticketPrice = 17.5
+        let cokeCost = 12.0
+        let popcornCost = 8.0
+        let numberOfFriends = 0.0
+        var foodLoop = true
+        var on = true
+        var food = "none"
+        var foodAmount = 0.0
+        var readerCost = 0.0
+        var readerFoodChoice = ""
+        //loop that keeps the code repeating until the reader quits
+        while on == true {
+        print("how many friends are you taking??")
+        //if 
+        if let numberOfFriends = Double(readLine()!) {
+            readerCost = ticketPrice * numberOfFriends
+            print("Your total is \(readerCost)")
+            while foodLoop == true{
+                print("Would you like to buy popcorn, coke, or nothing?")
+                food = readLine()!.lowercased()
+                while foodTrue = true {
+                    if food == "nothing" {
+                    print("Your total is \(numberOfFriends * ticketPrice)")
+                    on = false
+                    foodLoop = false
+                    foodTrue = False
+                    }
+                if food != ("coke" || "popcorn") {
+                    print("Please")
+                }
+                }
+                print("How many?")
+                if let foodAmount = Double(readLine()!) {
+                    if food == "popcorn" {
+                        readerCost = readerCost + popcornCost + foodAmount }
+                    if food == "coke" {
+                        readerCost = readerCost + cokeCost + foodAmount }
+                    else {
+                        print("Please enter a valid number.")
+                        }
+                    print("Your total will be \(readerCost)")
+                    print("Will that be all? (yes/no)")
+                    readerFoodChoice = readLine()!.lowercased()
+                    if readerFoodChoice == "yes" {
+                        print("Your total is \(readerCost)")
+                        foodLoop = false
+                        on = false
+                        }
+                    }
+                else {
+                    print("Plese choose coke, popcorn, or nothing.")
+                }
+            }
+        }
+        else {
+            print("Please write a valid number.")
+        }
+        
+        /*//the price of an item
         let pricePerItem = 19.99
         //how many items are bought
-        let quantity = 3.0
+        let quantity = 3
         //how much the tax costs
         let taxRate = 0.15
         //how much has to go to the state
@@ -21,17 +79,17 @@ struct SwiftPlayground {
         //tells how much is the taqx
         print("Tax (15%): $\(pricePerItem * quantity * taxRate)")
         //tells how much the item is with tax
-        print("Total: $\(pricePerItem * quantity * tax)")
+        print("Total: $\(pricePerItem * quantity * tax)")*/
 
-        let length = 12.5
+        /*let length = 12.5
         let width = 8.00
         let perimeterTime = 2.00
         print("The length of the rectangle is \(length) units.")
         print("The width of the rectangle is \(width) units.")
         print("The area of the rectangle is \(length * width) square units.")
-        print("The perimeter of the rectangle is \(perimeterTime * (length + width)) units.")
+        print("The perimeter of the rectangle is \(perimeterTime * (length + width)) units.")*/
 
-
+        /*
         //all variables/constantws
         var on = true  //what keeps the program running
         var checkOut = 0.00 //what it will cost
@@ -39,6 +97,7 @@ struct SwiftPlayground {
         let milk = 0.99
         let bread = 0.50
         let eggs = 1.55
+        var willBuyMoney = 0.00
         while on == true {
         print("What will you buy today? We have:")
         print("Milk $\(milk)")
@@ -47,28 +106,23 @@ struct SwiftPlayground {
         print("Everything else was bought out, we apologize.")
         print("So what will you buy? (Please mind your grammar)")
         var willBuy = readLine()!.lowercased()
-        print("How many?")
+        if willBuy == "" {
+            on = false
+        }*/
+        /*print("How many?")
         amount = Double(readLine()!)!
-
-        if willBuy == "bread" {
-            print("How many loaves")
-            checkOut = checkOut + bread }
-        if willBuy == "eggs" {
-            print("How many?")
             if amount > 0 {
-                print("\(amount) of eggs added to the cart.")
-                checkOut = checkOut + amount * eggs
-                print("Your total is \(checkOut)")
-            }
-            else {
-                print("Please write a valid number.")
-            }
+        print("\(amount) of \(willBuy) added to the cart.")
+        checkOut = checkOut + amount * willBuyMoney
+        print("Your total is \(checkOut)")
+        }*/
+        }
         }
 
 
         }
-
-
+        
+        /*
         //the price of an item
         let pricePerItem0 = readLine()
         //how many items are bought
@@ -88,5 +142,4 @@ struct SwiftPlayground {
         //tells how much the item is with tax
         print("Total: $\(pricePerItem * quantity * tax)")
         
-            }
-}
+            }*/
