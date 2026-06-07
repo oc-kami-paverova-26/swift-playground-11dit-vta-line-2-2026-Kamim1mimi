@@ -4,7 +4,8 @@
 @main
 struct SwiftPlayground {
     static func main() {
-/* doesn't work
+
+print("Welcome to New Zealandia")/* doesn't work
         print("Enter a random integer.")
         let ui = Int(readLine()!)
         if ui! >= 0 || ui! <= 0 {
