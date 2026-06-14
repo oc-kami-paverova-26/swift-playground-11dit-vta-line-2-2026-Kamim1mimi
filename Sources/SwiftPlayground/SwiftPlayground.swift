@@ -23,7 +23,7 @@ struct SwiftPlayground {
                     }
                 print("Enter a number.")
                 loop = true
-                while loop == true {
+                while loop == trssue {
                 if let animalNumber = Int(readLine()!) {
                     animalsSeen.append(birds[animalNumber])
                 } else {
