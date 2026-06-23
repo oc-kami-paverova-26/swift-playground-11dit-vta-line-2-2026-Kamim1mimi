@@ -21,10 +21,11 @@ struct SwiftPlayground {
     daysOfTheWeek.forEach { day in
         print("On \(day) how many hours did you spend on:")
         apps.forEach { app in
-            //if the input is correct, then the loop will 
+            //if the input is correct, then the loop will let the 2nd app o
             while loop == true {
-            print("\(app):")
-            userInput = Int(readLine()!)
+                loop = true
+                print("\(app):")
+                userInput = Int(readLine()!)
             //if the 
             
             }
@@ -62,10 +63,15 @@ struct SwiftPlayground {
     screenTimeAllWeek = screenTimeAllWeek + screenTimeToday
         }
 
-    func inputTesting() {
-        if userInput! >= 0 || userInput! <= 0 {
-            
+func inputTesting(prompt: String, from: Int, to: Int) -> Int {
+    while true {
+        print(prompt, terminator: " ")
+        if let userInput = readLine(), let int = Int(userInput), (from...to).contains(int) {
+            return int
+        } else {
+            print("You must enter a valid whole number (integer) from \(from) to \(to).")
         }
     }
+}
 
 }
