@@ -6,6 +6,8 @@ struct SwiftPlayground {
     //getting and collecting the data
     //collect a function to test if the data is usable
     static func main() {
+    var loop = true
+    var userInput: Int? = 5
     var hourLimit: Int = 0
     var screenTimeToday: Int = 0
     var screenTimeAllWeek: Int = 0
@@ -19,16 +21,24 @@ struct SwiftPlayground {
     daysOfTheWeek.forEach { day in
         print("On \(day) how many hours did you spend on:")
         apps.forEach { app in
+            //if the input is correct, then the loop will 
+            while loop == true {
             print("\(app):")
-            screenTimeToday = screenTimeToday + Int(readLine()!)!
+            userInput = Int(readLine()!)
+            //if the 
+            
             }
+            }
+
         print("Your screen time today is \(screenTimeToday).")
         if screenTimeToday > hourLimit {
             print("You're above your screen time limit. You should be more careful.")
         }
+
         if screenTimeToday == hourLimit {
             print("Your screen time is exactly as your screen time limit.")
         }
+
         if screenTimeToday < hourLimit {
             print("Good job! Your screen time is below the hour limit.")
         }
@@ -52,5 +62,10 @@ struct SwiftPlayground {
     screenTimeAllWeek = screenTimeAllWeek + screenTimeToday
         }
 
+    func inputTesting() {
+        if userInput! >= 0 || userInput! <= 0 {
+            
+        }
+    }
 
 }
