@@ -47,11 +47,10 @@ struct SwiftPlayground {
         screenTimeAllWeek = screenTimeAllWeek + screenTimeToday
         screenTimeToday = 0
         }
-    
-    screenTimeAllWeek = Int(readLine()!)!
 
     print("This week you spent \(screenTimeAllWeek) hours on your screen, which is an average of \(screenTimeAllWeek / daysOfTheWeek.count) hours.")
-
+    if screenTimeAllWeek / daysOfTheWeek.count == hourLimit {
+        print("Hello")}
     if screenTimeAllWeek / daysOfTheWeek.count > hourLimit {
             print("That is ABOVE the limit set for this week.")
         }
@@ -62,7 +61,7 @@ struct SwiftPlayground {
             print("That is below the limit set for this week. Good job.")
         }
     screenTimeAllWeek = screenTimeAllWeek + screenTimeToday
-        }
+    }
 
 func inputTesting(prompt: String, from: Int, to: Int) -> Int {
     while true {
@@ -71,8 +70,8 @@ func inputTesting(prompt: String, from: Int, to: Int) -> Int {
             return int
         } else {
             print("You must enter a valid whole number (integer) from \(from) to \(to).")
+            }
         }
     }
-}
 
 }
