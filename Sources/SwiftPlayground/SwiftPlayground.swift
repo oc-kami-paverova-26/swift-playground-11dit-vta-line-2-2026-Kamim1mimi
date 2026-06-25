@@ -7,7 +7,7 @@ struct SwiftPlayground {
     //collect a function to test if the data is usable
     static func main() {
     var loop = true
-    var userInput: Int? = 5
+    var userInput = 5
     var hourLimit: Int = 0
     var screenTimeToday: Int = 0
     var screenTimeAllWeek: Int = 0
@@ -21,16 +21,27 @@ struct SwiftPlayground {
     daysOfTheWeek.forEach { day in
         print("On \(day) how many hours did you spend on:")
         apps.forEach { app in
+            //turns on the loop
+            loop = true
             //if the input isn't int then repeat the app until it is
+            while loop == true {
+                print("\(app):")
+                if let userInput = Int(readLine()!) {
+                    if userInput >= 0 && userInput <= 24 {
+                    screenTimeToday = screenTimeToday + userInput
+                    loop = false
+                    }
+                    else {
+                        print("Please enter a valid number.")
+                    }
+                }
+                else {
+                    print("Please enter a valid number.")
+                }
 
-            //if and while loop
-                
-            print("\(app):")
-            userInput = Int(readLine()!)
-            //if the 
-            
-            }
-            }
+                }
+                }
+                }
 
         print("Your screen time today is \(screenTimeToday).")
         if screenTimeToday > hourLimit {
@@ -46,7 +57,7 @@ struct SwiftPlayground {
         }
         screenTimeAllWeek = screenTimeAllWeek + screenTimeToday
         screenTimeToday = 0
-        }
+        
 
     print("This week you spent \(screenTimeAllWeek) hours on your screen, which is an average of \(screenTimeAllWeek / daysOfTheWeek.count) hours.")
     if screenTimeAllWeek / daysOfTheWeek.count == hourLimit {
@@ -62,6 +73,7 @@ struct SwiftPlayground {
         }
     screenTimeAllWeek = screenTimeAllWeek + screenTimeToday
     }
+}
 
 func inputTesting(prompt: String, from: Int, to: Int) -> Int {
     while true {
@@ -74,4 +86,3 @@ func inputTesting(prompt: String, from: Int, to: Int) -> Int {
         }
     }
 
-}
