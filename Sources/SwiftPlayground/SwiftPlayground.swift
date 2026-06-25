@@ -21,11 +21,12 @@ struct SwiftPlayground {
     daysOfTheWeek.forEach { day in
         print("On \(day) how many hours did you spend on:")
         apps.forEach { app in
-            //if the input is correct, then the loop will let the 2nd app o
-            while loop == true {
-                loop = true
-                print("\(app):")
-                userInput = Int(readLine()!)
+            //if the input isn't int then repeat the app until it is
+
+            //if and while loop
+                
+            print("\(app):")
+            userInput = Int(readLine()!)
             //if the 
             
             }
