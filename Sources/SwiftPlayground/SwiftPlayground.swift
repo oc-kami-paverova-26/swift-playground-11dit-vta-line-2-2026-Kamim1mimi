@@ -3,8 +3,7 @@
 
 @main
 struct SwiftPlayground {
-    //getting and collecting the data
-    //collect a function to test if the data is usable
+    //No crashing at wrong data
     static func main() {
     var loop = true
     var userInput = 5
@@ -13,9 +12,15 @@ struct SwiftPlayground {
     var screenTimeAllWeek: Int = 0
     let daysOfTheWeek: [String] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     let apps : [String] = ["TikTok", "Youtube", "Facebook", "Instagram", "Snapchat", "Other"]
+    
+    
     print("Welcome to Screen Time Tracker.")
     print("What is the hour limit set for each day?")
     print("Enter a number:")
+
+    //if the time limit is not possible in real life, it will repeat
+    // until they enter a valid number. 
+    loop = true
     hourLimit = Int(readLine()!)!
 
     daysOfTheWeek.forEach { day in
@@ -23,11 +28,20 @@ struct SwiftPlayground {
         apps.forEach { app in
             //turns on the loop
             loop = true
-            //if the input isn't int then repeat the app until it is
+            //if the input is wrong, the question and app will repeat untill
+            // it's correct.
             while loop == true {
+                //writes the social media app
                 print("\(app):")
+                //checks if the input is an integer
                 if let userInput = Int(readLine()!) {
-                    if userInput >= 0 && userInput <= 24 {
+                    //if the input adds up to more than 24 hours, it will
+                    //repeat the loop until they add a possible input.
+                    //It finds out how much more time of the day is left
+                    //and compares if the input is bigger than it. 
+                    if userInput > 24 - screenTimeToday {
+                        print("Please enter a possible time.")
+                    } else if userInput >= 0 && userInput <= 24 {
                     screenTimeToday = screenTimeToday + userInput
                     loop = false
                     }
@@ -36,11 +50,11 @@ struct SwiftPlayground {
                     }
                 }
                 else {
-                    print("Please enter a valid number.")
+                    print("Please enter a number.")
                 }
 
                 }
-                }
+                
                 }
 
         print("Your screen time today is \(screenTimeToday).")
@@ -57,7 +71,7 @@ struct SwiftPlayground {
         }
         screenTimeAllWeek = screenTimeAllWeek + screenTimeToday
         screenTimeToday = 0
-        
+        }
 
     print("This week you spent \(screenTimeAllWeek) hours on your screen, which is an average of \(screenTimeAllWeek / daysOfTheWeek.count) hours.")
     if screenTimeAllWeek / daysOfTheWeek.count == hourLimit {
